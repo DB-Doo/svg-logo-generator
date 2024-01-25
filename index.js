@@ -43,7 +43,7 @@ function main() {
 
   //  Prompt the user with questions???
   inquirer.prompt(questions).then((answers) => {
-    // Based on user input determine which shape to insantiate
+    // Based on user input determine which shape to instantiate
     let shape;
     switch (answers.shapeType) {
       case "Triangle":
@@ -64,9 +64,7 @@ function main() {
     const svgContent = `
             <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
                 ${shape.render()}
-                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${
-                  answers.textColor
-                }">
+                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${answers.textColor}" font-size="50px">
                     ${answers.text}
                 </text>
             </svg>`;
