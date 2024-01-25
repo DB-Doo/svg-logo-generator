@@ -1,7 +1,8 @@
 
 # SVG Logo Generator
 
-## Link to video of usage
+## Sample of logo generated and link to video on usage 
+[![Video Title](./sample/logo.svg)](https://youtu.be/J2H9a8nK1E0 "Video Title")
 
 ## Description
 SVG Logo Generator is a Node.js command-line application that allows users to generate simple logos with custom text, shape, and colors, and save them as SVG files. This tool is especially useful for freelancers or small project teams who want to quickly create logos without the need for complex graphic design software.
