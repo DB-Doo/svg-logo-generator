@@ -1,20 +1,20 @@
-// import the needed modules. inquirer for command line prompts
+// Import the needed modules. inquirer for command line prompts
 const inquirer = require("inquirer");
 // fs (file system ) module is to enable file operations like writing to a file 
 const fs = require("fs");
-//import the shape classes from shapes.js
+//Import the shape classes from shapes.js
 const { Triangle, Circle, Square } = require("./lib/shapes");
 
-//main function to run the app
+//Main function to run the app
 function main() {
-  // questions for user input
+  // Questions for user input
   const questions = [
     {
       type: "input",
       name: "text",
       message: "Enter text for the logo (up to three characters):",
       validate: function (input) {
-        // make sure the user input isnt more than 3 characters
+        // Make sure the user input isnt more than 3 characters
         if (input.length <= 3) {
           return true;
         }
@@ -41,9 +41,9 @@ function main() {
     },
   ];
 
-  //  Prompt the user with questions?
+  //  Prompt the user with questions???
   inquirer.prompt(questions).then((answers) => {
-    // based on user input determine which shape to insantiate
+    // Based on user input determine which shape to insantiate
     let shape;
     switch (answers.shapeType) {
       case "Triangle":
@@ -57,7 +57,10 @@ function main() {
         break;
     }
 
-    // generate the SVG logo based on what the user inputs
+    // Generate the SVG logo based on what the user inputs
+    //sets logo in center, defines size 
+    // use the SVG element. SVG is a language for describing 2D graphics in XML
+
     const svgContent = `
             <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
                 ${shape.render()}
@@ -68,7 +71,7 @@ function main() {
                 </text>
             </svg>`;
 
-    // write the SVG content to a file named logo.svg
+    // Write the SVG content to a file named logo.svg
     fs.writeFileSync("logo.svg", svgContent);
 
     console.log("Generated logo.svg");
